@@ -7,7 +7,8 @@ import "./tailwind.css";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <ChakraProvider>
     <React.StrictMode>
-      <Container>
+      <Container className="space-y-8 pt-8">
+        <h1 className="text-2xl font-semibold">Border Radius Previewer</h1>
         <BorderRadiusPreview />
       </Container>
     </React.StrictMode>

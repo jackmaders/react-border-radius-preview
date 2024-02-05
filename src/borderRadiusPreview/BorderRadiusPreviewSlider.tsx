@@ -4,7 +4,6 @@ import {
   SliderFilledTrack,
   SliderThumb,
   SliderTrack,
-  Text,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
@@ -43,9 +42,11 @@ export default function BorderRadiusPreviewSlider({
         </Checkbox>
       </h3>
       <div className="">
-        <div className="">
-          <Text fontSize="sm">Vertical: {`${verticalValue}%`}</Text>
+        <label>
+          <span className="text-sm">Vertical: {`${horizontalValue}%`}</span>
           <Slider
+            name="vertical"
+            aria-label="vertical"
             defaultValue={0}
             value={verticalValue}
             min={0}
@@ -57,10 +58,12 @@ export default function BorderRadiusPreviewSlider({
             </SliderTrack>
             <SliderThumb />
           </Slider>
-        </div>
-        <div className="">
-          <Text fontSize="sm">Horizontal: {`${horizontalValue}%`}</Text>{" "}
+        </label>
+        <label>
+          <span className="text-sm">Horizontal: {`${horizontalValue}%`}</span>
           <Slider
+            name="horizontal"
+            aria-label="horizontal"
             defaultValue={0}
             value={horizontalValue}
             min={0}
@@ -73,7 +76,7 @@ export default function BorderRadiusPreviewSlider({
             </SliderTrack>
             <SliderThumb />
           </Slider>
-        </div>
+        </label>
       </div>
     </div>
   );
